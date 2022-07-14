@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+    
+    .box{
+        width: 100px;
+        height: 100px;
+        position: relative;
+        background: red;
+    }
+    </style>
+
+</head>
+<body>
+    <div class="box"></div>
+    <button>mov</button>  
+<button class='left'>left</button>
+<button onclick="moveright()">RIGHT</button>
+   <button onclick="bottom()">bottom</button>
+
+   
+   
+   
+   
+   <br>
+   <br>
+   <br>
+   <br>
+
+    <script>
+    var button=document.querySelector("button");
+         var left=document.querySelector(".left");
+    var box=document.querySelector(".box");
+        
+        var count=10;
+        button.addEventListener("mouseup",function(e){
+            mov();
+        })
+        function mov(){
+             var plus=count++;
+            box.style.left=plus*15+'px';            
+        }
+        
+        
+        left.addEventListener("mousedown",function(e){
+            movlet();
+//            setInterval(movlet,250);
+        })
+        function movlet(){
+             var minus=count--;
+            box.style.left=minus*10+'px';            
+        }
+     
+    </script>
+</body>
+</html>
